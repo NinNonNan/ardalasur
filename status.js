@@ -6,9 +6,12 @@ async function updateStatus() {
         const data = await response.json();
 
         // Aggiorna lo stato Online/Offline
+        const statusCard = document.getElementById('status-card');
         const statusText = document.getElementById('status-text');
+        
         statusText.textContent = data.online ? 'ONLINE' : 'OFFLINE';
         statusText.className = data.online ? 'online' : 'offline';
+        statusCard.className = data.online ? 'status-card online' : 'status-card offline';
 
         // Aggiorna i dati dei giocatori
         document.getElementById('player-count').textContent = data.players;

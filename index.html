@@ -2,22 +2,45 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Stato Server Ardlasur</title>
-    <style>
-        .online { color: green; }
-        .offline { color: red; }
-        #motd { font-family: monospace; background: #222; color: #fff; padding: 10px; display: inline-block; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardlasur | Server Status</title>
+
+    <!-- Meta Tag per la condivisione (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Visualizza lo stato in tempo reale del server Minecraft Ardlasur.">
+    <meta property="og:title" content="Ardlasur | Server Status">
+    <meta property="og:description" content="Controlla i giocatori online e la versione del server di Ardlasur.">
+    <meta property="og:image" content="ardlasur_logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#313131">
+
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- O favicon.ico se preferisci -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Monitoraggio Server</h1>
-    <div id="status-container">
-        <p>Stato: <span id="status-text">Caricamento...</span></p>
-        <p>Giocatori: <span id="player-count">-</span> / <span id="max-players">-</span></p>
-        <p>Versione: <span id="version">-</span></p>
-        <div id="motd"></div>
-    </div>
+    <div class="container">
+        <img src="ardlasur_logo.png" alt="Ardlasur Logo" class="logo">
+        
+        <h1>Server Status</h1>
+        
+        <div id="status-card" class="status-card online">
+            <p>Stato: <span id="status-text" class="status-indicator">Caricamento...</span></p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Giocatori</span>
+                    <span class="info-value"><span id="player-count">-</span> / <span id="max-players">-</span></span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Versione</span>
+                    <span class="info-value" id="version">-</span>
+                </div>
+            </div>
 
+            <div id="motd">In attesa dei dati...</div>
+        </div>
+    </div>
     <script src="status.js"></script>
 </body>
 </html>
