@@ -28,6 +28,18 @@ async function updateStatus() {
     }
 }
 
+function copyIP() {
+    const ip = "ardlasur.therpggame.com:19132";
+    navigator.clipboard.writeText(ip).then(() => {
+        const btn = document.getElementById('copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = "Copiato!";
+        setTimeout(() => {
+            btn.textContent = originalText;
+        }, 2000);
+    });
+}
+
 // Aggiorna subito e poi ogni 30 secondi
 updateStatus();
 setInterval(updateStatus, 30000);
