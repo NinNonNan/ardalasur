@@ -1,4 +1,11 @@
-body { 
+html, body {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+*, *::before, *::after {
+    box-sizing: inherit; /* Inherit box-sizing for all elements */
+}
+
+body {
     font-family: 'VT323', monospace; 
     background-color: #121212; 
     background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
@@ -7,10 +14,15 @@ body {
     margin: 0; 
     padding: 20px; 
     font-size: 1.2rem;
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center container vertically */
+    align-items: center; /* Center container horizontally */
 }
 .container { 
     max-width: 600px; 
-    margin: 40px auto; 
+    /* margin: 40px auto; -- Rimosso, il centraggio è gestito dal flexbox del body */
     background: #313131; 
     padding: 30px; 
     border: 4px solid #000;
@@ -67,7 +79,7 @@ h1 {
     }
 
     .container {
-        margin: 10px auto; /* Riduci il margine del container */
+        margin: 0; /* Rimosso il margine, il centraggio è gestito dal flexbox del body */
         padding: 15px; /* Riduci il padding del container */
         width: calc(100% - 20px); /* Assicurati che si adatti alla larghezza con il padding del body */
         max-width: none; /* Permetti al container di occupare quasi tutta la larghezza */
