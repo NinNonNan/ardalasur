@@ -2,35 +2,22 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ard Lasur</title>
-
-    <!-- Meta Tag SEO e Anteprime -->
-    <meta name="description" content="Entra nel mondo di Ard Lasur. Il server Minecraft è online e operativo!">
-    <meta name="theme-color" content="#313131">
-
-    <!-- Open Graph (WhatsApp, Facebook, Discord) -->
-    <meta property="og:title" content="Ard Lasur - Minecraft Server">
-    <meta property="og:description" content="Entra nel mondo di Ard Lasur. Il server è online e operativo!">
-    <meta property="og:image" content="ardlasur_logo.png">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ard Lasur">
-    <meta name="twitter:description" content="Il sistema è online e operativo.">
-    <meta name="twitter:image" content="ardlasur_logo.png">
-
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Stato Server Ardlasur</title>
+    <style>
+        .online { color: green; }
+        .offline { color: red; }
+        #motd { font-family: monospace; background: #222; color: #fff; padding: 10px; display: inline-block; }
+    </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Ard Lasur</h1>
-        <img src="ardlasur_logo.png" alt="Ard Lasur Logo" class="logo">
-        <p>Il sistema è online e operativo.</p>
-        <small>Stato del server: 🟢 <span class="status-online">Online</span></small>
+    <h1>Monitoraggio Server</h1>
+    <div id="status-container">
+        <p>Stato: <span id="status-text">Caricamento...</span></p>
+        <p>Giocatori: <span id="player-count">-</span> / <span id="max-players">-</span></p>
+        <p>Versione: <span id="version">-</span></p>
+        <div id="motd"></div>
     </div>
+
+    <script src="status.js"></script>
 </body>
 </html>
