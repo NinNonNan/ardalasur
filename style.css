@@ -58,3 +58,56 @@ h1 {
     border: 2px solid #555;
     text-shadow: 2px 2px #3f3f00;
 }
+
+/* Media Query per schermi più piccoli (es. smartphone) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Riduci il padding del body */
+        font-size: 1rem; /* Riduci la dimensione base del font */
+    }
+
+    .container {
+        margin: 10px auto; /* Riduci il margine del container */
+        padding: 15px; /* Riduci il padding del container */
+        width: calc(100% - 20px); /* Assicurati che si adatti alla larghezza con il padding del body */
+        max-width: none; /* Permetti al container di occupare quasi tutta la larghezza */
+    }
+
+    .logo {
+        max-width: 150px; /* Riduci la dimensione del logo */
+        margin-bottom: 10px;
+        filter: drop-shadow(2px 2px 0px #000); /* Riduci l'ombra del logo */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Riduci la dimensione del titolo */
+        margin-bottom: 15px;
+        text-shadow: 1px 1px #000; /* Riduci l'ombra del testo */
+    }
+
+    .status-card {
+        padding: 15px; /* Riduci il padding della card */
+    }
+
+    .status-indicator {
+        text-shadow: 1px 1px #000; /* Riduci l'ombra del testo */
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* Impila gli elementi verticalmente su schermi piccoli */
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .info-item {
+        padding: 8px;
+        box-shadow: inset -2px -2px #555, inset 2px 2px #fff; /* Riduci l'effetto 3D */
+    }
+
+    #motd {
+        margin-top: 15px;
+        padding: 10px;
+        font-size: 0.9em; /* Riduci la dimensione del font del MOTD */
+        text-shadow: 1px 1px #3f3f00; /* Riduci l'ombra del testo */
+    }
+}
